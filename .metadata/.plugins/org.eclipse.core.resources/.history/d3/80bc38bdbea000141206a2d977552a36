@@ -1,0 +1,12 @@
+package application;
+
+import javafx.*;
+import javafx.scene.shape.Rectangle;
+
+public class Board {
+	
+	public void rectangle(){
+		Rectangle rect = new Rectangle(50,50,50,50);
+	}
+	
+}

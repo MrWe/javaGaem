@@ -1,0 +1,753 @@
+!SESSION 2015-01-20 16:47:01.092 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.8.0_20
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product -product org.eclipse.epp.package.standard.product -keyring /Users/Wiker/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.standard.product -data /Users/Wiker/Documents/javaGaem -product org.eclipse.epp.package.standard.product -keyring /Users/Wiker/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.fx.ide.css 4 0 2015-01-20 16:47:02.162
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css [290]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtext)(bundle-version>=2.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.css.cssext 4 0 2015-01-20 16:47:02.214
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css.cssext [291]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css [290]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.2))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.css.cssext.proposals 4 0 2015-01-20 16:47:02.271
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css.cssext.proposals [292]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css.cssext
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css.cssext; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css.cssext [291]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+              org.eclipse.fx.ide.css [290]
+                No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.fx.ide.css.extapi
+    -> Export-Package: org.eclipse.fx.ide.css.extapi; bundle-symbolic-name="org.eclipse.fx.ide.css"; bundle-version="1.1.0.201411050807"; version="0.0.0"; x-friends:="org.eclipse.fx.ide.css.ui"
+  Unresolved requirement: Import-Package: org.eclipse.fx.ide.css.ui.extapi
+    -> Export-Package: org.eclipse.fx.ide.css.ui.extapi; bundle-symbolic-name="org.eclipse.fx.ide.css.ui"; bundle-version="1.1.0.201411050807"; version="0.0.0"; x-internal:="true"
+       org.eclipse.fx.ide.css.ui [296]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtext)(bundle-version>=2.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.css.cssext.ui 4 0 2015-01-20 16:47:02.329
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css.cssext.ui [293]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css.ui; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css.ui; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css.ui [296]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+              org.eclipse.fx.ide.css [290]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css.cssext; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css.cssext; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css.cssext [291]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.2))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.css.ui 4 0 2015-01-20 16:47:02.487
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css.ui [296]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css [290]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtext)(bundle-version>=2.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.java6 4 0 2015-01-20 16:47:02.496
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.java6 [301]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version>=1.3)(!(version>=1.8)))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.pde.ui 4 0 2015-01-20 16:47:02.534
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.pde.ui [308]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.rrobot.dsl; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.rrobot.dsl; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.rrobot.dsl [311]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.pde.ui.e4 4 0 2015-01-20 16:47:02.580
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.pde.ui.e4 [309]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.pde.ui; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.pde.ui; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.pde.ui [308]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.rrobot.dsl; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.rrobot.dsl; bundle-version="1.1.0.201411050807"; singleton:="true"
+              org.eclipse.fx.ide.rrobot.dsl [311]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.rrobot.dsl; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.rrobot.dsl; bundle-version="1.1.0.201411050807"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.rrobot.dsl 4 0 2015-01-20 16:47:02.616
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.rrobot.dsl [311]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.rrobot.dsl.ui 4 0 2015-01-20 16:47:02.666
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.rrobot.dsl.ui [312]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.rrobot.dsl; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.rrobot.dsl; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.rrobot.dsl [311]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.core.net 1 0 2015-01-20 16:47:06.393
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
+
+!ENTRY org.eclipse.jface 2 0 2015-01-20 17:08:40.824
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2015-01-20 17:08:40.824
+!MESSAGE A conflict occurred for COMMAND+W:
+Binding(COMMAND+W,
+	ParameterizedCommand(Command(org.eclipse.ui.file.close,Close,
+		Close the active editor,
+		Category(org.eclipse.ui.category.file,File,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@423d31b0,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(COMMAND+W,
+	ParameterizedCommand(Command(org.eclipse.ui.cocoa.closeDialog,Close Dialog,
+		Closes the active Dialog,
+		Category(org.eclipse.ui.category.window,Window,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5b2a690f,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.dialog,,,system)
+!SESSION 2015-01-21 15:04:20.544 -----------------------------------------------
+eclipse.buildId=4.4.0.I20140606-1215
+java.version=1.8.0_20
+java.vendor=Oracle Corporation
+BootLoader constants: OS=macosx, ARCH=x86_64, WS=cocoa, NL=en_US
+Framework arguments:  -product org.eclipse.epp.package.standard.product -keyring /Users/Wiker/.eclipse_keyring -showlocation
+Command-line arguments:  -os macosx -ws cocoa -arch x86_64 -product org.eclipse.epp.package.standard.product -keyring /Users/Wiker/.eclipse_keyring -showlocation
+
+!ENTRY org.eclipse.fx.ide.css 4 0 2015-01-21 15:04:21.908
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css [290]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtext)(bundle-version>=2.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.css.cssext 4 0 2015-01-21 15:04:21.956
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css.cssext [291]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css [290]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.2))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.css.cssext.proposals 4 0 2015-01-21 15:04:22.003
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css.cssext.proposals [292]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css.cssext
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css.cssext; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css.cssext [291]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+              org.eclipse.fx.ide.css [290]
+                No resolution report for the bundle.  Unresolved requirement: Import-Package: org.eclipse.fx.ide.css.ui.extapi
+    -> Export-Package: org.eclipse.fx.ide.css.ui.extapi; bundle-symbolic-name="org.eclipse.fx.ide.css.ui"; bundle-version="1.1.0.201411050807"; version="0.0.0"; x-internal:="true"
+       org.eclipse.fx.ide.css.ui [296]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+  Unresolved requirement: Import-Package: org.eclipse.fx.ide.css.extapi
+    -> Export-Package: org.eclipse.fx.ide.css.extapi; bundle-symbolic-name="org.eclipse.fx.ide.css"; bundle-version="1.1.0.201411050807"; version="0.0.0"; x-friends:="org.eclipse.fx.ide.css.ui"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtext)(bundle-version>=2.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.css.cssext.ui 4 0 2015-01-21 15:04:22.074
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css.cssext.ui [293]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css.cssext; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css.cssext; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css.cssext [291]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+              org.eclipse.fx.ide.css [290]
+                No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css.ui; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css.ui; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css.ui [296]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"; visibility:="reexport"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.2))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css.cssext [osgi.identity; osgi.identity="org.eclipse.fx.ide.css.cssext"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.css.ui 4 0 2015-01-21 15:04:22.118
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.css.ui [296]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.css; bundle-version="0.9.0"; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.css; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.css [290]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.css [osgi.identity; osgi.identity="org.eclipse.fx.ide.css"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.xtext)(bundle-version>=2.0.0))
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.java6 4 0 2015-01-21 15:04:22.127
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.java6 [301]
+  Unresolved requirement: Require-Capability: osgi.ee; filter:="(&(osgi.ee=JavaSE)(version>=1.3)(!(version>=1.8)))"
+
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.pde.ui 4 0 2015-01-21 15:04:22.182
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.pde.ui [308]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.rrobot.dsl; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.rrobot.dsl; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.rrobot.dsl [311]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.pde.ui.e4 4 0 2015-01-21 15:04:22.246
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.pde.ui.e4 [309]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.rrobot.dsl; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.rrobot.dsl; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.rrobot.dsl [311]
+         No resolution report for the bundle.  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.pde.ui; bundle-version="0.9.0"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.pde.ui; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.pde.ui [308]
+         Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.rrobot.dsl; bundle-version="0.9.0"
+           -> Bundle-SymbolicName: org.eclipse.fx.ide.rrobot.dsl; bundle-version="1.1.0.201411050807"; singleton:="true"
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.rrobot.dsl 4 0 2015-01-21 15:04:22.281
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.rrobot.dsl [311]
+  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.fx.ide.rrobot.dsl.ui 4 0 2015-01-21 15:04:22.325
+!MESSAGE FrameworkEvent ERROR
+!STACK 0
+org.osgi.framework.BundleException: Could not resolve module: org.eclipse.fx.ide.rrobot.dsl.ui [312]
+  Unresolved requirement: Require-Bundle: org.eclipse.fx.ide.rrobot.dsl; visibility:="reexport"
+    -> Bundle-SymbolicName: org.eclipse.fx.ide.rrobot.dsl; bundle-version="1.1.0.201411050807"; singleton:="true"
+       org.eclipse.fx.ide.rrobot.dsl [311]
+         No resolution report for the bundle.  Bundle was not resolved because of a uses contraint violation.
+  org.osgi.service.resolver.ResolutionException: Uses constraint violation. Unable to resolve resource org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"] because it is exposed to package 'javax.annotation' from resources org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"] and javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"] via two dependency chains.
+
+Chain 1:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (&(osgi.wiring.bundle=org.eclipse.osgi)(bundle-version>=3.7.0))
+     |
+    provide: osgi.wiring.bundle: [org.eclipse.osgi, system.bundle]
+  org.eclipse.osgi [osgi.identity; osgi.identity="org.eclipse.osgi"; type="osgi.bundle"; version:Version="3.10.0.v20140606-1445"; singleton:="true"]
+
+Chain 2:
+  org.eclipse.fx.ide.rrobot.dsl [osgi.identity; osgi.identity="org.eclipse.fx.ide.rrobot.dsl"; type="osgi.bundle"; version:Version="1.1.0.201411050807"; singleton:="true"]
+    require: (osgi.wiring.bundle=org.eclipse.xtext)
+     |
+    provide: osgi.wiring.bundle; bundle-version:Version="2.7.2.v201409160908"; osgi.wiring.bundle="org.eclipse.xtext"; singleton:="true"
+  com.google.guava [osgi.identity; osgi.identity="com.google.guava"; type="osgi.bundle"; version:Version="15.0.0.v201403281430"]
+    import: (osgi.wiring.package=javax.annotation)
+     |
+    export: osgi.wiring.package: javax.annotation
+  javax.annotation [osgi.identity; osgi.identity="javax.annotation"; type="osgi.bundle"; version:Version="1.2.0.v201401042248"]
+	at org.eclipse.osgi.container.Module.start(Module.java:434)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1582)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.incStartLevel(ModuleContainer.java:1561)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.doContainerStartLevel(ModuleContainer.java:1533)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1476)
+	at org.eclipse.osgi.container.ModuleContainer$ContainerStartLevel.dispatchEvent(ModuleContainer.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+
+!ENTRY org.eclipse.core.net 1 0 2015-01-21 15:04:27.821
+!MESSAGE System property http.nonProxyHosts has been set to local|*.local|169.254/16|*.169.254/16 by an external source. This value will be overwritten using the values from the preferences
